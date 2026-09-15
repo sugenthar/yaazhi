@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yaazhi Web, Files, JSON & Database — Tamil Guide</title>
+<meta name="description" content="Build web servers, HTTP clients, WebSocket apps, JSON tools, file programs and database apps in Tamil with Yaazhi.">
+<meta name="keywords" content="Yaazhi web, Yaazhi HTTP, Yaazhi WebSocket, Yaazhi JSON, Yaazhi database, Tamil programming">
+<link rel="icon" href="../assets/favicon.png" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap nav">
+<a class="brand" href="../index.html">Yaazhi <span>யாழி</span></a><span class="ver">Yaazhi 0.1.0</span>
+<nav class="links" aria-label="Primary"><a href="../download.html">Download</a><a href="index.html">Docs</a><a href="../examples.html">Examples</a><a href="../libraries.html">Libraries</a><a href="../vscode.html">VS Code</a><a href="../releases.html">Releases</a><a href="../community.html">Community</a><a href="../about.html">About</a><a href="https://github.com/sugenthar/yaazhi">GitHub</a></nav></div></header>
+<main id="main" class="wrap">
+<h1>Web · Files · JSON · Database</h1>
+<p>Yaazhi can build servers, web apps, file tools and data apps — all in Tamil.</p>
+<h2>Web server — வலை</h2>
+<pre><code>சேர் வலை
+சேவையகம் = வலை.சேவையகம்($௧௮௦௮௦)
+அச்சிடு($"சேவையகம் தயார்")</code></pre>
+<p>Run with <code>yaazhi run சேவையகம்.ழி</code>, then open <code>http://127.0.0.1:18080/</code> in your browser. Stop with <code>Ctrl+C</code>.</p>
+<h2>Web request — இணைய இணைப்பு</h2>
+<pre><code>சேர் வலை
+பதில் = வலை.பெறு($"http://127.0.0.1:18080/")
+அச்சிடு(பதில்)</code></pre>
+<h2>WebSocket</h2>
+<pre><code>சேர் வலை
+இணைப்பு = வலை.இணையச்சாளரம்($"ws://127.0.0.1:18082/")
+இணைப்பு.அனுப்பு($"வணக்கம்!")
+அச்சிடு(இணைப்பு.செய்தி())</code></pre>
+<h2>JSON</h2>
+<pre><code>சேர் தரவு
+மாணவர் = {"பெயர்": $"அருள்", "வயது": $௨௦}
+உரை = தரவு.ஜெசன்(மாணவர்)
+அச்சிடு(உரை)</code></pre>
+<h2>Files</h2>
+<pre><code>சேர் கோப்பு
+கோப்பு.எழுது_மூலம்($"நாள்.txt", $"வணக்கம், யாழி!")
+உரை = கோப்பு.படி_மூலம்($"நாள்.txt")
+அச்சிடு(உரை)</code></pre>
+<h2>Database — தரவுத்தளம்</h2>
+<pre><code>சேர் தரவுத்தளம்
+தளம் = தரவுத்தளம்.இணை($":நினைவகம்:")
+தளம்.இயக்கு($"CREATE TABLE மாணவர் (பெயர் TEXT, வயது INT)")
+தளம்.இயக்கு($"INSERT INTO மாணவர் VALUES ('அருள்', 20)")
+முடிவு = தளம்.தேடு($"SELECT * FROM மாணவர்")
+அச்சிடு(முடிவு)</code></pre>
+</main>
+<footer class="site"><div class="wrap"><p><strong>Yaazhi — யாழி</strong> · Yaazhi 0.1.0 · MIT · © 2026 Yaazhi</p></div></footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Learn Yaazhi | தமிழ் நிரலாக்க மொழி — Getting Started</title>
+<meta name="description" content="Learn Yaazhi in a few minutes: your first Tamil program, Tamil numbers, running .ழி files, and creating a project. Beginner-friendly Yaazhi tutorial.">
+<meta name="keywords" content="Learn Yaazhi, Yaazhi tutorial, Tamil programming, Tamil coding, யாழி, Yaazhi getting started">
+<link rel="icon" href="../assets/favicon.png" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap nav">
+<a class="brand" href="../index.html">Yaazhi <span>யாழி</span></a><span class="ver">Yaazhi 0.1.0</span>
+<nav class="links" aria-label="Primary"><a href="../download.html">Download</a><a href="index.html">Docs</a><a href="../examples.html">Examples</a><a href="../libraries.html">Libraries</a><a href="../vscode.html">VS Code</a><a href="../releases.html">Releases</a><a href="../community.html">Community</a><a href="../about.html">About</a><a href="https://github.com/sugenthar/yaazhi">GitHub</a></nav></div></header>
+<main id="main" class="wrap">
+<h1>Getting Started with Yaazhi</h1>
+<p><strong>Yaazhi — யாழி is a Tamil-based programming language used to build games, servers, applications, AI/LLM projects, and other software.</strong> You write programs using Tamil letters, words, names, keywords and Tamil numbers. A Yaazhi source file ends with <code>.ழி</code>. This page takes you from zero to your first running program in a few minutes.</p>
+<p><strong>Learning path:</strong> தொடக்கம் → அடிப்படை → செயல்கள் → தரவுகள் → வகுப்புகள் → தொகுதிகள் → கோப்புகள் → JSON → வலை → தரவுத்தளம் → விளையாட்டுகள் → திட்டங்கள்</p>
+
+<h2>1. Install Yaazhi 0.1.0</h2>
+<p>New to Yaazhi? <a href="../download.html">Download Yaazhi</a> first, then follow your platform below.</p>
+<h3>Linux</h3>
+<pre><code>tar -xzf yaazhi-0.1.0-linux-x86_64.tar.gz
+cd yaazhi-0.1.0
+./install.sh</code></pre>
+<pre><code>yaazhi --version</code></pre>
+<h3>Windows</h3>
+<p>Download the official Windows package from <a href="https://github.com/sugenthar/yaazhi/releases">GitHub Releases</a>, extract it, then run the included installer in PowerShell:</p>
+<pre><code>powershell -ExecutionPolicy Bypass -File install.ps1</code></pre>
+<p>Then <strong>open a NEW terminal</strong> and check:</p>
+<pre><code>yaazhi --version</code></pre>
+<h3>macOS</h3>
+<p>macOS support is coming soon. Please use Linux or Windows for now.</p>
+
+<h2>2. First program — வணக்கம்</h2>
+<p>Create a file named <code>வணக்கம்.ழி</code> with this content:</p>
+<pre><code>அச்சிடு($"வணக்கம், யாழி!")</code></pre>
+<p>This prints:</p>
+<pre><code>வணக்கம், யாழி!</code></pre>
+<p>Run it:</p>
+<pre><code>yaazhi run வணக்கம்.ழி</code></pre>
+<p><code>அச்சிடு</code> means “print”. <code>.ழி</code> is the Yaazhi source-file extension. <code>yaazhi run</code> compiles and runs your program using the Yaazhi Compiler and Yaazhi Runtime.</p>
+
+<h2>3. Tamil numbers</h2>
+<p>Yaazhi uses <strong>Tamil numbers</strong>:</p>
+<pre><code>௦ ௧ ௨ ௩ ௪ ௫ ௬ ௭ ௮ ௯</code></pre>
+<pre><code>எண் = $௧௦
+முடிவு = எண் + $௫
+அச்சிடு(முடிவு)</code></pre>
+<p>Tamil digits begin with <code>$</code>: <code>$௧௦</code> is ten, <code>$௫</code> is five. Tamil identifiers like <code>எண்</code> and <code>முடிவு</code> are normal names in Yaazhi.</p>
+
+<h2>4. Variables — மாறிகள்</h2>
+<pre><code>பெயர் = $"யாழி"
+வயது = $௧௮
+அச்சிடு(பெயர்)
+அச்சிடு(வயது)</code></pre>
+
+<h2>5. Check, build and interactive mode</h2>
+<pre><code>yaazhi check வணக்கம்.ழி   # check without running
+yaazhi build வணக்கம்.ழி   # build your program
+yaazhi repl               # try Yaazhi interactively
+yaazhi --help             # all commands
+yaazhi doctor             # check your setup</code></pre>
+
+<h2>6. New project</h2>
+<pre><code>yaazhi new வணக்கம்
+cd வணக்கம்
+yaazhi run</code></pre>
+<p>This creates a ready project with a <code>yaazhi.toml</code> file and a starting <code>.ழி</code> program. The Yaazhi Package Manager handles project setup and libraries.</p>
+
+<h2>Yaazhi commands</h2>
+<table><tr><th>Command</th><th>What it does (simple words)</th></tr>
+<tr><td><code>yaazhi --version</code></td><td>Show your Yaazhi version (should be Yaazhi 0.1.0).</td></tr>
+<tr><td><code>yaazhi --help</code></td><td>Show help for all commands.</td></tr>
+<tr><td><code>yaazhi run</code></td><td>Run a <code>.ழி</code> file or project.</td></tr>
+<tr><td><code>yaazhi check</code></td><td>Check a program without running it.</td></tr>
+<tr><td><code>yaazhi build</code></td><td>Build your program.</td></tr>
+<tr><td><code>yaazhi repl</code></td><td>Try small Yaazhi lines interactively.</td></tr>
+<tr><td><code>yaazhi new</code></td><td>Create a new Yaazhi project.</td></tr>
+<tr><td><code>yaazhi doctor</code></td><td>Check that Yaazhi is set up correctly.</td></tr></table>
+<h3>Package commands</h3>
+<table><tr><th>Command</th><th>What it does</th></tr>
+<tr><td><code>yaazhi init</code></td><td>Start package setup in a folder.</td></tr>
+<tr><td><code>yaazhi install</code></td><td>Add libraries to your project.</td></tr>
+<tr><td><code>yaazhi remove</code></td><td>Remove a library.</td></tr>
+<tr><td><code>yaazhi update</code></td><td>Update libraries.</td></tr>
+<tr><td><code>yaazhi list</code></td><td>Show installed libraries.</td></tr>
+<tr><td><code>yaazhi search</code></td><td>Find libraries.</td></tr>
+<tr><td><code>yaazhi pack</code></td><td>Pack your project for sharing.</td></tr>
+<tr><td><code>yaazhi clean</code></td><td>Clean build files.</td></tr></table>
+
+<h2>Next steps</h2>
+<div class="docnav">
+<a href="language.html">Language guide — words, numbers, sentences →</a>
+<a href="../examples.html">Examples from easy to harder →</a>
+<a href="installation.html">Full installation guide →</a>
+<a href="../libraries.html">Libraries →</a>
+<a href="game.html">Make a game →</a>
+</div>
+<p class="meta">Questions? <a href="https://github.com/sugenthar/yaazhi/issues">Report an Issue</a> · <a href="https://github.com/sugenthar/yaazhi">View on GitHub</a></p>
+</main>
+<footer class="site"><div class="wrap"><p><strong>Yaazhi — யாழி</strong> · Yaazhi 0.1.0 · MIT · © 2026 Yaazhi</p></div></footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

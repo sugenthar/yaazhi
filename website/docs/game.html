@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yaazhi 2D Games — Make Games in Tamil</title>
+<meta name="description" content="Make 2D games in Tamil with the Yaazhi 2D Game Library: characters, movement, keyboard controls, collision, scores, screens and game loops. Beginner Coin Catch example.">
+<meta name="keywords" content="Yaazhi games, Yaazhi 2D game library, Tamil game programming, யாழி விளையாட்டு">
+<link rel="icon" href="../assets/favicon.png" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap nav">
+<a class="brand" href="../index.html">Yaazhi <span>யாழி</span></a><span class="ver">Yaazhi 0.1.0</span>
+<nav class="links" aria-label="Primary"><a href="../download.html">Download</a><a href="index.html">Docs</a><a href="../examples.html">Examples</a><a href="../libraries.html">Libraries</a><a href="../vscode.html">VS Code</a><a href="../releases.html">Releases</a><a href="../community.html">Community</a><a href="../about.html">About</a><a href="https://github.com/sugenthar/yaazhi">GitHub</a></nav></div></header>
+<main id="main" class="wrap">
+<h1>2D Game Development with Yaazhi</h1>
+<p>The <strong>Yaazhi 2D Game Library</strong> lets you make 2D games in Tamil: characters, movement, keyboard controls, collision, score systems, game screens and game loops.</p>
+<h2>Your first game — நாணயம் பிடி (Coin Catch)</h2>
+<pre><code>சேர் விளையாட்டு
+விளையாட்டு.சாளரம்($"நாணயம் பிடி", $௪௦, $௧௮)
+செயல் ஆட்டச்_சட்டகம்():
+    விசை = விளையாட்டு.விசை_படி($"நகர்: ")
+    என்றால் விசை == $"வெளி":
+        விளையாட்டு.நிறுத்து()
+    விளையாட்டு.திரை_துடை()
+    விளையாட்டு.எல்லை($"#")
+    விளையாட்டு.காட்டு()
+விளையாட்டு.இயக்கு(ஆட்டச்_சட்டகம்)</code></pre>
+<p>Run with <code>yaazhi run விளையாட்டு.ழி</code>.</p>
+<h2>What you can build</h2>
+<ul>
+<li>Characters that move with the keyboard</li>
+<li>Shapes, screens and score displays</li>
+<li>Collision — when two things touch</li>
+<li>Game loops — pictures that keep updating</li>
+<li>Small full games like Coin Catch</li>
+</ul>
+<h2>New project for a game</h2>
+<pre><code>yaazhi new என்_விளையாட்டு
+cd என்_விளையாட்டு
+yaazhi run</code></pre>
+<p><a href="../examples.html#games">More game examples →</a></p>
+</main>
+<footer class="site"><div class="wrap"><p><strong>Yaazhi — யாழி</strong> · Yaazhi 0.1.0 · MIT · © 2026 Yaazhi</p></div></footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

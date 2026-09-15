@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yaazhi Language Reference — Tamil Programming | யாழி</title>
+<meta name="description" content="Yaazhi language reference in simple Tamil-based words: letters, names, Tamil numbers, strings, variables, functions, conditions, loops, lists, dictionaries, classes, errors, modules, files, JSON, web and database.">
+<meta name="keywords" content="Yaazhi language, Yaazhi reference, Tamil programming language, Tamil numbers, யாழி, Tamil coding">
+<link rel="icon" href="../assets/favicon.png" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap nav">
+<a class="brand" href="../index.html">Yaazhi <span>யாழி</span></a><span class="ver">Yaazhi 0.1.0</span>
+<nav class="links" aria-label="Primary"><a href="../download.html">Download</a><a href="index.html">Docs</a><a href="../examples.html">Examples</a><a href="../libraries.html">Libraries</a><a href="../vscode.html">VS Code</a><a href="../releases.html">Releases</a><a href="../community.html">Community</a><a href="../about.html">About</a><a href="https://github.com/sugenthar/yaazhi">GitHub</a></nav></div></header>
+<main id="main" class="wrap">
+<h1>Yaazhi Language Reference</h1>
+<p>Yaazhi programs live in <code>.ழி</code> files. Blocks are written with indentation and begin with <code>:</code>. Notes start with <code>#</code>. Yaazhi is designed around Tamil — letters, names, words, sentences and numbers can all be Tamil.</p>
+
+<h2>எழுத்துக்கள் — Letters and files</h2>
+<p>Write Tamil directly. File names can also be Tamil, for example <code>வணக்கம்.ழி</code>.</p>
+<pre><code>அச்சிடு($"வணக்கம், யாழி!")</code></pre>
+
+<h2>பெயர்கள் — Names (identifiers)</h2>
+<p>Use Tamil names for people, things and values:</p>
+<pre><code>பெயர் = $"யாழி"
+வயது = $௧௮
+ஊர் = $"மதுரை"</code></pre>
+
+<h2>தமிழ் எண்கள் — Tamil numbers</h2>
+<p>Yaazhi supports Tamil numbers. Tamil digits:</p>
+<pre><code>௦ ௧ ௨ ௩ ௪ ௫ ௬ ௭ ௮ ௯</code></pre>
+<p>Numbers in programs start with <code>$</code>:</p>
+<pre><code>எண் = $௧௦
+முடிவு = எண் + $௫
+அச்சிடு(முடிவு)</code></pre>
+<p><code>$மெய்</code> means true, <code>$பொய்</code> means false.</p>
+
+<h2>எழுத்துச்சரங்கள் — Strings (Tamil text)</h2>
+<pre><code>வாழ்த்து = $"வணக்கம்"
+பெயர் = $"அருள்"
+அச்சிடு(வாழ்த்து + $" " + பெயர்)</code></pre>
+
+<h2>மாறிகள் — Variables</h2>
+<pre><code>பெயர் = $"யாழி"
+வயது = $௧௮
+அச்சிடு(பெயர்)
+அச்சிடு(வயது)</code></pre>
+
+<h2>செயல்கள் — Functions</h2>
+<p><code>செயல்</code> creates a reusable action. <code>கொடு</code> gives back a value:</p>
+<pre><code>செயல் கூட்டு(அ, ஆ):
+    கொடு அ + ஆ
+
+முடிவு = கூட்டு($௧௦, $௨௦)
+அச்சிடு(முடிவு)</code></pre>
+<pre><code>செயல் வாழ்த்து(பெயர் = $"நண்பா"):
+    அச்சிடு($"வணக்கம் " + பெயர்)
+
+வாழ்த்து()
+வாழ்த்து($"அருள்")</code></pre>
+
+<h2>நிபந்தனைகள் — Conditions</h2>
+<p><code>என்றால்</code> means “if”, <code>இல்லை</code> means “else”:</p>
+<pre><code>எண் = $௫
+என்றால் எண் > $௩:
+    அச்சிடு($"பெரிய எண்")
+இல்லை:
+    அச்சிடு($"சிறிய எண்")</code></pre>
+
+<h2>சுழற்சிகள் — Loops</h2>
+<p><code>வரை</code> repeats while something is true. <code>ஒவ்வொரு … இல்</code> visits each item. <code>வரம்பு</code> gives a range of Tamil numbers:</p>
+<pre><code>எண் = $௧
+வரை எண் <= $௩:
+    அச்சிடு(எண்)
+    எண் = எண் + $௧</code></pre>
+<pre><code>ஒவ்வொரு எண் இல் வரம்பு($௧, $௫):
+    அச்சிடு(எண்)</code></pre>
+
+<h2>பட்டியல்கள் — Lists</h2>
+<pre><code>எண்கள் = [$௧, $௨, $௩]
+அச்சிடு(எண்கள்[$௦])
+ஒவ்வொரு எண் இல் எண்கள்:
+    அச்சிடு(எண்)</code></pre>
+
+<h2>அகராதிகள் — Dictionaries</h2>
+<pre><code>மாணவர் = {"பெயர்": $"அருள்", "வயது": $௨௦}
+அச்சிடு(மாணவர்["பெயர்"])
+அச்சிடு(மாணவர்["வயது"])</code></pre>
+
+<h2>வகுப்புகள் — Classes and objects</h2>
+<p><code>வகுப்பு</code> describes a kind of thing. <code>இது</code> means “this one”. <code>செயல்</code> inside a class is a method:</p>
+<pre><code>வகுப்பு மாணவர்:
+    செயல் உருவாக்கு(பெயர், வயது):
+        இது.பெயர் = பெயர்
+        இது.வயது = வயது
+
+    செயல் வணக்கம்():
+        அச்சிடு($"வணக்கம் " + இது.பெயர்)
+
+ம = மாணவர்($"அருள்", $௨௦)
+ம.வணக்கம்()</code></pre>
+
+<h2>பிழை கையாளுதல் — Errors</h2>
+<p><code>முயற்சி</code> tries, <code>பிழை</code> catches a problem, <code>இறுதியில்</code> always runs, <code>எறி</code> raises an error:</p>
+<pre><code>முயற்சி:
+    முடிவு = $௧௦ / $௨
+    அச்சிடு(முடிவு)
+பிழை தவறு:
+    அச்சிடு($"பிழை: " + தவறு)
+இறுதியில்:
+    அச்சிடு($"முடிந்தது")</code></pre>
+
+<h2 id="modules">தொகுதிகள் — Modules (reusing code)</h2>
+<p><code>சேர்</code> brings library code into your program:</p>
+<pre><code>சேர் கணிதம்
+சேர் தரவு
+சேர் கோப்பு
+
+அச்சிடு(கணிதம்.அடுக்கு($௨, $௩))</code></pre>
+
+<h2>கோப்புகள் — Files</h2>
+<pre><code>சேர் கோப்பு
+கோப்பு.எழுது_மூலம்($"வணக்கம்.txt", $"வணக்கம், யாழி!")
+உரை = கோப்பு.படி_மூலம்($"வணக்கம்.txt")
+அச்சிடு(உரை)</code></pre>
+
+<h2>JSON</h2>
+<pre><code>சேர் தரவு
+மாணவர் = {"பெயர்": $"அருள்", "வயது": $௨௦}
+உரை = தரவு.ஜெசன்(மாணவர்)
+அச்சிடு(உரை)</code></pre>
+
+<h2>வலை — Web</h2>
+<pre><code>சேர் வலை
+# ஒரு சிறிய சேவையகத்தைத் தொடங்கு (முழு எடுத்துக்காட்டு: வலை பக்கம்)
+சேவையகம் = வலை.சேவையகம்($௧௮௦௮௦)
+அச்சிடு($"சேவையகம் தயார்")</code></pre>
+<p>See <a href="http.html">Web · Files · JSON · Database</a> for full server, client and WebSocket examples.</p>
+
+<h2>தரவுத்தளம் — Database</h2>
+<pre><code>சேர் தரவுத்தளம்
+தளம் = தரவுத்தளம்.இணை($":நினைவகம்:")
+அச்சிடு($"தரவுத்தளம் தயார்")</code></pre>
+
+<p><a href="../examples.html">Practise with 21 lessons →</a></p>
+</main>
+<footer class="site"><div class="wrap"><p><strong>Yaazhi — யாழி</strong> · Yaazhi 0.1.0 · MIT · © 2026 Yaazhi · <a href="https://github.com/sugenthar/yaazhi">GitHub</a></p></div></footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Highlighter Visual Test — Yaazhi யாழி</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<main class="wrap">
+<h1>Yaazhi highlighter — visual test (not indexed)</h1>
+<p>Every block below is plain <code>&lt;pre&gt;&lt;code&gt;</code> source; the Yaazhi component adds labels, colors and Copy at load. Tests: <code>node tests/run-highlight-tests.js</code>.</p>
+
+<h2>Full program (dark, line numbers)</h2>
+<pre data-linenos data-file="வணக்கம்.ழி"><code># வணக்கம்.ழி — real example shape
+சேர் கணிதம்
+
+செயல் கூட்டு(அ, ஆ):
+    கொடு அ + ஆ
+
+வகுப்பு மாணவர்:
+    பெயர் = ""
+    வயது = $௦
+
+    செயல் உருவாக்கு(பெயர், வயது):
+        இது.பெயர் = பெயர்
+        இது.வயது = வயது
+
+ம = மாணவர்("அருள்", $௨௦)
+அச்சிடு(ம.பெயர்)
+அச்சிடு(கணிதம்.அடுக்கு($௨, $௩))</code></pre>
+
+<h2>Control flow · errors · lambdas</h2>
+<pre><code>எண் = $௫
+என்றால் எண் &gt; $௩:
+    அச்சிடு("பெரிய எண்")
+இல்லையென்றால் எண் == $௩:
+    அச்சிடு("மூன்று")
+இல்லை:
+    அச்சிடு("சிறிய எண்")
+
+ஒவ்வொரு எண் இல் வரம்பு($௧, $௫):
+    என்றால் எண் == $௩:
+        தொடர்
+    அச்சிடு(எண்)
+
+முயற்சி:
+    எறி "தவறு"
+பிழை தவறு:
+    அச்சிடு("பிழை: " + தவறு)
+இறுதியில்:
+    அச்சிடு("முடிந்தது")
+
+கூட்டு = (அ, ஆ) =&gt; அ + ஆ
+பொது செயல் குரை() -&gt; வெற்று:
+    அச்சிடு($"வணக்கம்!\n")
+மெய்_கொடி = $மெய்
+வெற்று_மதிப்பு = $வெற்று
+/* தொகுதி குறிப்பு */</code></pre>
+
+<h2>Light theme</h2>
+<pre data-theme="light"><code>சேர் தரவு
+நாய்_ஒன்று.குரை()
+மேல்.உருவாக்கு(பெயர்)</code></pre>
+
+<h2>Manifest</h2>
+<pre><code>["திட்டம்"]
+"பெயர்" = "2பரிமாணவிளையாட்டு"
+"பதிப்பு" = "1.0.0"
+# குறிப்பு
+["சார்புகள்"]
+"2பரிமாணவிளையாட்டு" = "../2பரிமாணவிளையாட்டு"</code></pre>
+
+<h2>Shell</h2>
+<pre><code>yaazhi --version   # Yaazhi 0.1.0
+yaazhi run வணக்கம்.ழி</code></pre>
+
+<h2>Compiler error</h2>
+<pre><code>யாழி பிழை: பகுப்பாய்வு பிழை (examples/07-oop/inheritance.ழி): மரபுரிமை (சேர்தல்) இன்னும் ஆதரிக்கப்படவில்லை (வரி 11)</code></pre>
+</main>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

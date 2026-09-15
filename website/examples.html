@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yaazhi Examples — Learn Tamil Programming Step by Step</title>
+<meta name="description" content="21 beginner-friendly Yaazhi examples in Tamil: basics, functions, data, classes, files, JSON, web, database, real applications and 2D games. Start with simple Tamil programs and gradually build real applications, web projects, servers, and games.">
+<meta name="keywords" content="Yaazhi examples, Tamil programming examples, Yaazhi tutorial, யாழி, Tamil coding, Yaazhi games, Yaazhi web">
+<link rel="icon" href="assets/favicon.png" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap nav">
+<a class="brand" href="index.html">Yaazhi <span>யாழி</span></a><span class="ver">Yaazhi 0.1.0</span>
+<nav class="links" aria-label="Primary"><a href="download.html">Download</a><a href="docs/getting-started.html">Docs</a><a href="examples.html">Examples</a><a href="libraries.html">Libraries</a><a href="vscode.html">VS Code</a><a href="releases.html">Releases</a><a href="community.html">Community</a><a href="about.html">About</a><a href="https://github.com/sugenthar/yaazhi">GitHub</a></nav></div></header>
+<main id="main" class="wrap">
+<h1>Yaazhi Examples — 21 lessons</h1>
+<p>Learn step by step, from your first word to games and web apps. Save each block as a <code>.ழி</code> file and run with <code>yaazhi run &lt;file&gt;.ழி</code>.</p>
+<p>Start with simple Tamil programs and gradually build real applications, web projects, servers, and games.</p>
+<p><strong>Learning path:</strong> தொடக்கம் → அடிப்படை → செயல்கள் → தரவுகள் → வகுப்புகள் → தொகுதிகள் → கோப்புகள் → JSON → வலை → தரவுத்தளம் → விளையாட்டுகள் → திட்டங்கள்</p>
+<input id="docsearch" class="searchbox" type="search" placeholder="Filter examples…" aria-label="Filter examples">
+
+<h2 id="basics">அடிப்படைகள் — Basics</h2>
+<h3>01 — வணக்கம் (First program)</h3>
+<pre><code>அச்சிடு($"வணக்கம், யாழி!")</code></pre>
+<p>Run: <code>yaazhi run வணக்கம்.ழி</code></p>
+<h3>02 — மாறிகள் (Variables)</h3>
+<pre><code>பெயர் = $"யாழி"
+வயது = $௧௮
+அச்சிடு(பெயர்)
+அச்சிடு(வயது)</code></pre>
+<h3>03 — கணிதம் (Maths with Tamil numbers)</h3>
+<pre><code>முதல் = $௧௦
+இரண்டாம் = $௨௦
+முடிவு = முதல் + இரண்டாம்
+அச்சிடு(முடிவு)</code></pre>
+<h3>04 — நிபந்தனை (Conditions with என்றால் / இல்லை)</h3>
+<pre><code>வயது = $௧௮
+என்றால் வயது >= $௧௮:
+    அச்சிடு($"வாக்களிக்கலாம்")
+இல்லை:
+    அச்சிடு($"காத்திருங்கள்")</code></pre>
+<h3>05 — சுழற்சி (Loops with வரை / ஒவ்வொரு / வரம்பு)</h3>
+<pre><code>ஒவ்வொரு எண் இல் வரம்பு($௧, $௬):
+    அச்சிடு(எண்)</code></pre>
+<pre><code>எண் = $௧
+வரை எண் <= $௩:
+    அச்சிடு(எண்)
+    எண் = எண் + $௧</code></pre>
+<h3>09 — சரங்கள் (Tamil text)</h3>
+<pre><code>பெயர் = $"அருள்"
+வாழ்த்து = $"வணக்கம் " + பெயர்
+அச்சிடு(வாழ்த்து)</code></pre>
+
+<h2 id="functions">செயல்கள் — Functions</h2>
+<h3>06 — செயல்கள் (செயல் / கொடு)</h3>
+<pre><code>செயல் வாழ்த்து(பெயர்):
+    அச்சிடு($"வணக்கம் " + பெயர்)
+
+வாழ்த்து($"அருள்")</code></pre>
+<h3>Parameters and return values</h3>
+<pre><code>செயல் கூட்டு(அ, ஆ = $௧௦):
+    கொடு அ + ஆ
+
+அச்சிடு(கூட்டு($௫))
+அச்சிடு(கூட்டு($௫, $௭))</code></pre>
+<h3>மீள்செயல் (Repeat with a function)</h3>
+<pre><code>செயல் எண்ணு(எண்):
+    என்றால் எண் <= $௦:
+        கொடு $௦
+    அச்சிடு(எண்)
+    கொடு எண்ணு(எண் - $௧)
+
+எண்ணு($௩)</code></pre>
+
+<h2 id="data">தரவு — Data</h2>
+<h3>07 — பட்டியல் (Lists)</h3>
+<pre><code>பழங்கள் = [$"மாம்பழம்", $"வாழை", $"திராட்சை"]
+அச்சிடு(பழங்கள்[$௦])
+ஒவ்வொரு பழம் இல் பழங்கள்:
+    அச்சிடு(பழம்)</code></pre>
+<h3>08 — அகராதி (Dictionaries)</h3>
+<pre><code>மாணவர் = {"பெயர்": $"அருள்", "வயது": $௨௦, "ஊர்": $"மதுரை"}
+அச்சிடு(மாணவர்["பெயர்"])
+அச்சிடு(மாணவர்["வயது"])</code></pre>
+<h3>14 — JSON</h3>
+<pre><code>சேர் தரவு
+மாணவர் = {"பெயர்": $"அருள்", "வயது": $௨௦}
+உரை = தரவு.ஜெசன்(மாணவர்)
+அச்சிடு(உரை)</code></pre>
+
+<h2 id="oop">பொருள் சார்ந்த நிரலாக்கம் — Classes</h2>
+<h3>10 — வகுப்புகள் (வகுப்பு / இது / செயல்)</h3>
+<pre><code>வகுப்பு மாணவர்:
+    செயல் உருவாக்கு(பெயர், வயது):
+        இது.பெயர் = பெயர்
+        இது.வயது = வயது
+
+    செயல் வணக்கம்():
+        அச்சிடு($"வணக்கம் " + இது.பெயர்)
+
+ம = மாணவர்($"அருள்", $௨௦)
+ம.வணக்கம்()</code></pre>
+<h3>பொருட்கள் மற்றும் முறைகள்</h3>
+<pre><code>வகுப்பு கணக்கு:
+    செயல் உருவாக்கு(தொகை):
+        இது.தொகை = தொகை
+
+    செயல் சேர்(எண்):
+        இது.தொகை = இது.தொகை + எண்
+        கொடு இது.தொகை
+
+க = கணக்கு($௧௦௦)
+அச்சிடு(க.சேர்($௫௦))</code></pre>
+
+<h2 id="errors">11 — பிழை கையாளுதல் (முயற்சி / பிழை / இறுதியில் / எறி)</h2>
+<pre><code>முயற்சி:
+    முடிவு = $௧௦ / $௨
+    அச்சிடு(முடிவு)
+பிழை தவறு:
+    அச்சிடு($"பிழை: " + தவறு)
+இறுதியில்:
+    அச்சிடு($"முடிந்தது")</code></pre>
+
+<h2 id="modules">12 — தொகுதிகள் (Reusing code)</h2>
+<pre><code>சேர் கணிதம்
+சேர் தரவு
+அச்சிடு(கணிதம்.அடுக்கு($௨, $௩))</code></pre>
+
+<h2 id="files">கோப்புகள் — Files</h2>
+<h3>13 — கோப்பு வாசிப்பு மற்றும் எழுதுதல்</h3>
+<pre><code>சேர் கோப்பு
+கோப்பு.எழுது_மூலம்($"நாள்.txt", $"வணக்கம், யாழி!")
+உரை = கோப்பு.படி_மூலம்($"நாள்.txt")
+அச்சிடு(உரை)</code></pre>
+
+<h2 id="web">வலை — Web</h2>
+<h3>15 — வலை (Simple server)</h3>
+<pre><code>சேர் வலை
+சேவையகம் = வலை.சேவையகம்($௧௮௦௮௦)
+அச்சிடு($"சேவையகம் தயார்: 18080")</code></pre>
+<h3>17 — இணைய இணைப்பு (HTTP request)</h3>
+<pre><code>சேர் வலை
+பதில் = வலை.பெறு($"http://127.0.0.1:18080/")
+அச்சிடு(பதில்)</code></pre>
+<h3>18 — WebSocket</h3>
+<pre><code>சேர் வலை
+இணைப்பு = வலை.இணையச்சாளரம்($"ws://127.0.0.1:18082/")
+இணைப்பு.அனுப்பு($"வணக்கம்!")
+அச்சிடு(இணைப்பு.செய்தி())</code></pre>
+<h3>சிறிய API மற்றும் வலை பயன்பாடு</h3>
+<pre><code>சேர் வலை
+சேர் தரவு
+சேவையகம் = வலை.சேவையகம்($௧௮௦௮௦)
+சேவையகம்.பெறு($"/", செயல்(கோரிக்கை):
+    கொடு தரவு.ஜெசன்({"செய்தி": $"வணக்கம்"})
+)
+அச்சிடு($"API தயார்")</code></pre>
+
+<h2 id="database">தரவுத்தளம் — Database</h2>
+<h3>16 — தரவு சேமித்தல் மற்றும் தேடல் (SQLite)</h3>
+<pre><code>சேர் தரவுத்தளம்
+தளம் = தரவுத்தளம்.இணை($":நினைவகம்:")
+தளம்.இயக்கு($"CREATE TABLE மாணவர் (பெயர் TEXT, வயது INT)")
+தளம்.இயக்கு($"INSERT INTO மாணவர் VALUES ('அருள்', 20)")
+முடிவு = தளம்.தேடு($"SELECT * FROM மாணவர்")
+அச்சிடு(முடிவு)</code></pre>
+
+<h2 id="projects">உண்மையான திட்டங்கள் — Real projects</h2>
+<h3>19 — சிறிய திட்டம் (Todo)</h3>
+<pre><code>பணிகள் = [$"பால் வாங்கு", $"யாழி படி"]
+செயல் காட்டு():
+    எண் = $௧
+    ஒவ்வொரு பணி இல் பணிகள்:
+        அச்சிடு(எண்)
+        அச்சிடு(பணி)
+        எண் = எண் + $௧
+
+காட்டு()</code></pre>
+<h3>Calculator</h3>
+<pre><code>செயல் கணிப்பான்(அ, குறி, ஆ):
+    என்றால் குறி == $"+":
+        கொடு அ + ஆ
+    என்றால் குறி == $"-":
+        கொடு அ - ஆ
+    என்றால் குறி == $"*":
+        கொடு அ * ஆ
+    கொடு அ / ஆ
+
+அச்சிடு(கணிப்பான்($௧௦, $"+", $௫))
+அச்சிடு(கணிப்பான்($௯, $"-", $௩))</code></pre>
+<h3>Student Management</h3>
+<pre><code>மாணவர்கள் = []
+செயல் சேர்_மாணவர்(பெயர், வயது):
+    மாணவர்கள் = மாணவர்கள் + [{"பெயர்": பெயர், "வயது": வயது}]
+
+சேர்_மாணவர்($"அருள்", $௨௦)
+அச்சிடு(மாணவர்கள்)</code></pre>
+<h3>20 — வலை பயன்பாடு (Mini Web App)</h3>
+<pre><code>சேர் வலை
+சேவையகம் = வலை.சேவையகம்($௧௮௦௮௦)
+அச்சிடு($"என் வலை பயன்பாடு தயார்")</code></pre>
+
+<h2 id="games">விளையாட்டுகள் — Games</h2>
+<h3>21 — விளையாட்டு (Coin Catch with the Yaazhi 2D Game Library)</h3>
+<pre><code>சேர் விளையாட்டு
+விளையாட்டு.சாளரம்($"நாணயம் பிடி", $௪௦, $௧௮)
+செயல் ஆட்டச்_சட்டகம்():
+    விளையாட்டு.திரை_துடை()
+    விளையாட்டு.எல்லை($"#")
+    விளையாட்டு.காட்டு()
+விளையாட்டு.இயக்கு(ஆட்டச்_சட்டகம்)</code></pre>
+<p>More game ideas: keyboard movement, shapes, collision, score and game loop — see <a href="docs/game.html">2D Game Development</a>.</p>
+<p class="meta">Run any example: <code>yaazhi run &lt;file&gt;.ழி</code> · <a href="https://github.com/sugenthar/yaazhi">Source Repository</a></p>
+</main>
+<footer class="site"><div class="wrap"><p><strong>Yaazhi — யாழி</strong> · Yaazhi 0.1.0 · MIT · © 2026 Yaazhi · <a href="https://github.com/sugenthar/yaazhi">GitHub</a></p></div></footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

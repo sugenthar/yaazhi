@@ -1,0 +1,206 @@
+{
+  "name": "yaazhi-language",
+  "displayName": "Yaazhi Language",
+  "description": "Yaazhi (\u0baf\u0bbe\u0bb4\u0bbf) language support for Visual Studio Code \u2014 Tamil-first syntax highlighting, IntelliSense, diagnostics, build, run, and check via the native Yaazhi compiler.",
+  "version": "0.1.0",
+  "publisher": "yaazhi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yaazhi/yaazhi"
+  },
+  "bugs": {
+    "url": "https://github.com/yaazhi/yaazhi/issues"
+  },
+  "homepage": "https://github.com/yaazhi/yaazhi",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "yaazhi",
+    "\u0baf\u0bbe\u0bb4\u0bbf",
+    "tamil",
+    "tamil-programming-language",
+    "programming-language",
+    "compiler"
+  ],
+  "activationEvents": [
+    "onLanguage:yaazhi"
+  ],
+  "main": "./out/extension.js",
+  "icon": "images/yaazhi.png",
+  "contributes": {
+    "languages": [
+      {
+        "id": "yaazhi",
+        "aliases": [
+          "Yaazhi",
+          "\u0baf\u0bbe\u0bb4\u0bbf"
+        ],
+        "extensions": [
+          ".\u0bb4\u0bbf"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "yaazhi",
+        "scopeName": "source.yaazhi",
+        "path": "./syntaxes/yaazhi.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "yaazhi",
+        "path": "./snippets/yaazhi.json"
+      }
+    ],
+    "configurationDefaults": {
+      "[yaazhi]": {
+        "editor.semanticHighlighting.enabled": true
+      }
+    },
+    "commands": [
+      {
+        "command": "yaazhi.runFile",
+        "title": "Yaazhi: Run File"
+      },
+      {
+        "command": "yaazhi.runProject",
+        "title": "Yaazhi: Run Project"
+      },
+      {
+        "command": "yaazhi.build",
+        "title": "Yaazhi: Build"
+      },
+      {
+        "command": "yaazhi.check",
+        "title": "Yaazhi: Check"
+      },
+      {
+        "command": "yaazhi.stop",
+        "title": "Yaazhi: Stop"
+      },
+      {
+        "command": "yaazhi.restart",
+        "title": "Yaazhi: Restart"
+      },
+      {
+        "command": "yaazhi.openOutput",
+        "title": "Yaazhi: Open Output"
+      },
+      {
+        "command": "yaazhi.diagnoseTerminal",
+        "title": "Yaazhi: Diagnose Tamil Terminal"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "yaazhi.runFile",
+          "when": "editorLangId == yaazhi",
+          "group": "navigation@1"
+        },
+        {
+          "command": "yaazhi.build",
+          "when": "editorLangId == yaazhi",
+          "group": "navigation@2"
+        },
+        {
+          "command": "yaazhi.check",
+          "when": "editorLangId == yaazhi",
+          "group": "navigation@3"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "yaazhi.runFile",
+          "when": "editorLangId == yaazhi"
+        },
+        {
+          "command": "yaazhi.build",
+          "when": "editorLangId == yaazhi"
+        },
+        {
+          "command": "yaazhi.check",
+          "when": "editorLangId == yaazhi"
+        },
+        {
+          "command": "yaazhi.runProject",
+          "when": "editorLangId == yaazhi"
+        },
+        {
+          "command": "yaazhi.stop",
+          "when": "editorLangId == yaazhi"
+        },
+        {
+          "command": "yaazhi.restart",
+          "when": "editorLangId == yaazhi"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "yaazhi.runFile",
+        "key": "ctrl+f5",
+        "mac": "cmd+f5",
+        "when": "editorLangId == yaazhi"
+      }
+    ],
+    "configuration": {
+      "title": "Yaazhi",
+      "properties": {
+        "yaazhi.home": {
+          "type": "string",
+          "default": "",
+          "description": "Yaazhi home directory containing the native compiler and standard library. When empty, the extension discovers it from the workspace layout, the installed distribution, and the YAAZHI_HOME environment variable."
+        },
+        "yaazhi.compiler": {
+          "type": "string",
+          "default": "",
+          "description": "Full path to the native Yaazhi compiler executable (bin/yaazhi or compiler/build/yaazhi). When empty, derived from yaazhi.home."
+        },
+        "yaazhi.runtime": {
+          "type": "string",
+          "default": "",
+          "description": "Full path to the Yaazhi runtime host (yaazhi_run / runtime/build/yaazhi_run). When empty, the run flow resolves it from the compiler path."
+        },
+        "yaazhi.compilerArgs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Extra arguments appended to every Yaazhi compiler invocation."
+        },
+        "yaazhi.terminal.fontFamily": {
+          "type": "string",
+          "default": "Nirmala UI, Noto Sans Tamil, Consolas",
+          "description": "Recommended terminal font family for Tamil Yaazhi output. Configure through VS Code settings; the extension does not force a font."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src test --ext .ts",
+    "test": "vitest run",
+    "package": "vsce package"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/vscode": "^1.90.0",
+    "@vscode/vsce": "^3.9.2",
+    "eslint": "^9.9.0",
+    "typescript": "^5.5.0",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^5.0.0"
+  }
+}

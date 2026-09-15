@@ -1,0 +1,91 @@
+# Changelog
+
+## 0.1.0
+
+Initial public release of Yaazhi Language support for Visual Studio Code.
+
+- Yaazhi language registration (`yaazhi`, `.ழி`, aliases `Yaazhi` / `யாழி`)
+- Tamil-first TextMate grammar with:
+  - Tamil keywords
+  - Built-ins
+  - Types
+  - OOP keywords
+  - `$`-prefixed Tamil numerals
+  - `$மெய்` / `$பொய்` booleans
+  - Strings
+  - Comments
+  - Operators
+- Language configuration with:
+  - `#` comments
+  - Brackets
+  - Auto-closing pairs
+  - Tamil identifier support
+  - Indentation rules
+  - Folding markers
+- Snippets for:
+  - Functions
+  - `என்றால்` / `இல்லையென்றால்`
+  - Loops
+  - `வரம்பு`
+  - `அச்சிடு`
+  - `உள்ளீடு`
+  - `முயற்சி` / `பிழை` / `இறுதியில்`
+  - `எறி`
+- Commands:
+  - Run File
+  - Run Project
+  - Debug File
+  - Debug Project
+  - Build
+  - Check
+  - Stop
+  - Restart Language Server
+  - Open Output
+  - Diagnose Tamil Terminal
+- Real Yaazhi compiler integration using `language/main.py`
+- Real Yaazhi runtime integration using the Yaazhi runtime host
+- Compiler diagnostics integrated into the VS Code Problems panel
+- Integrated Yaazhi terminal with process and exit-code reporting
+- Project detection through `yazhi.toml` / `திட்டம்.json`
+- Language Server Protocol support
+- Completion support for:
+  - Keywords
+  - Types
+  - Built-ins
+  - Native functions
+  - Module members
+  - Constructors
+  - Constants
+- Hover documentation for Yaazhi keywords, types, built-ins, and OOP features
+- Document symbols and Outline support
+- Definition and references support
+- Rename support foundation
+- Semantic token support
+- Module-aware language features
+- Cross-file project awareness
+- Yaazhi class, inheritance, constructor, method, and type information
+- Debug Adapter Protocol integration
+- Yaazhi debugger support for:
+  - Launch
+  - Breakpoints
+  - Continue
+  - Next / Step Over
+  - Step In
+  - Step Out
+  - Pause
+  - Terminate
+  - Stack Trace
+  - Scopes
+  - Locals
+  - Globals
+  - Variables
+  - Collection expansion
+  - Evaluate support
+  - Exception stops
+- Debugging support for classes, inheritance, lambdas, modules, and Unicode/Tamil source paths
+- Safe Windows/Linux/Unicode path handling
+- Managed compiler, runtime, language-server, and debugger process cleanup
+- Cross-platform executable discovery
+- Tamil/Unicode-safe process argument handling
+- VS Code `.txt` files remain associated with Plain Text
+- `.ழி` files are exclusively registered as Yaazhi source files

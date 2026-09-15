@@ -1,0 +1,26 @@
+// Todo application with MongoDB – integration example
+சேர் தரவுத்தளம்
+சேர் சூழல்
+
+யுஆர்ஐ = சூழல்.பெறு("YAAZHI_TEST_MONGODB_URI")
+என்றால் யுஆர்ஐ == "":
+    யுஆர்ஐ = "mongodb://127.0.0.1:27017"
+தரவுத்தளம்_பெயர் = சூழல்.பெறு("YAAZHI_TEST_MONGODB_DATABASE")
+என்றால் தரவுத்தளம்_பெயர் == "":
+    தரவுத்தளம்_பெயர் = "yaazhi_test"
+
+db = தரவுத்தளம்.இணை("mongodb", {"uri": யுஆர்ஐ, "database": தரவுத்தளம்_பெயர்})
+coll = db.சேகரிப்பு("todos")
+
+coll.சேர்({"title": "Learn Yaazhi", "description": "Build with MongoDB", "completed": $பொய்})
+அச்சிடு("Inserted")
+
+todos = coll.தேடு({})
+அச்சிடு("Todos from MongoDB:")
+ஒவ்வொரு todo இல் todos:
+    அச்சிடு(todo["title"])
+
+coll.நீக்கு({"title": "Learn Yaazhi"})
+அச்சிடு("Cleaned")
+
+db.மூடு()

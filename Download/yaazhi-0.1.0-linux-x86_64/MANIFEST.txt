@@ -1,0 +1,9 @@
+Yaazhi 0.1.0
+target OS: linux
+target architecture: x86_64
+compiler build: Release (native C11, gcc (GCC) 16.2.1 20260819 (Red Hat 16.2.1-2))
+runtime build: Release (yaazhi-run host with TLS + SQLite)
+stdlib version: 0.1.0 (library/index.json + .ழி sources)
+NBC compatibility: NIRAL v1
+requires: C runtime libraries of the target OS, OpenSSL (libssl/libcrypto) for HTTPS
+not required: Python, Git, CMake, C toolchain, Yaazhi source repository

@@ -1,0 +1,23 @@
+# Yaazhi Release Checklist — 0.1.0
+
+- [ ] Version updated (`VERSION` = single source of truth; compiler/runtime/CLI/extension/package metadata agree)
+- [ ] Compiler tested (`cd test && ./run.sh`)
+- [ ] Runtime tested (`runtime` C tests + `build_runtime.sh` output timestamp)
+- [ ] CLI tested (`yaazhi --version`, `run`, `check`, `build`, `repl`, `doctor`)
+- [ ] Package manager tested (`init/install/remove/update/list/search/pack` incl. `file://` registry smoke)
+- [ ] VS Code extension tested (`cd vscode-extension && npm test`, `.vsix` rebuilt)
+- [ ] Examples tested (01–16 + 17-concurrency + 18-database runnable; 99-errors correctly fail)
+- [ ] External library tested (`2பரிமாணவிளையாட்டு` + `projects/2d_games`)
+- [ ] 2D game library tested
+- [ ] Linux package built (`Download/build-dist.sh` → tarball + `.sha256`)
+- [ ] Windows package built — Coming Soon (installer unverified; skip until tested)
+- [ ] macOS package built — Coming Soon (skip until tested)
+- [ ] SHA256 checksums generated and verified (`sha256sum -c`)
+- [ ] LICENSE verified (MIT © 2026 Yaazhi)
+- [ ] README verified (no internal notes, no fake URLs)
+- [ ] Documentation verified (every command re-run; no invented APIs/keywords/errors)
+- [ ] Website build passes (static; open `website/index.html`; no console errors)
+- [ ] Links verified (no 404, no placeholder/localhost URLs)
+- [ ] No secrets (no passwords, tokens, keys, private paths)
+- [ ] GitHub Pages deployment tested
+- [ ] GitHub Release created (binaries attached there, not in Pages)

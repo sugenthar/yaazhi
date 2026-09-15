@@ -1,0 +1,58 @@
+@import url("yaazhi-code.css");
+:root{
+  --bg:#ffffff; --fg:#111111; --muted:#555555; --line:#e5e5e5;
+  --soft:#f6f6f6; --code:#f4f4f4; --accent:#111111; --focus:#005fcc;
+  --max:1080px; --radius:10px;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans",Arial,"Noto Sans Tamil","Latha","Nirmala UI",sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Tamil",monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);line-height:1.65;font-size:17px}
+a{color:var(--fg);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.skip{position:absolute;left:-999px;top:0;background:#000;color:#fff;padding:8px 14px;z-index:99}
+.skip:focus{left:8px;top:8px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+header.site{border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:20}
+.nav{display:flex;align-items:center;gap:18px;padding:12px 0;flex-wrap:wrap}
+.brand{font-weight:800;font-size:20px;text-decoration:none;letter-spacing:.2px}
+.brand span{font-weight:400;color:var(--muted)}
+nav.links{display:flex;gap:14px;flex-wrap:wrap;margin-left:auto;font-size:15px}
+nav.links a{text-decoration:none;color:#222;padding:6px 8px;border-radius:6px}
+nav.links a:hover{background:var(--soft)}
+.ver{font-size:12px;border:1px solid var(--line);border-radius:20px;padding:2px 10px;color:var(--muted);font-family:var(--mono)}
+.hero{padding:64px 0 40px}
+.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.1;margin:0 0 10px}
+.hero p.lead{font-size:clamp(17px,2.4vw,22px);color:#222;max-width:62ch}
+.btnrow{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:700;border:1px solid #111}
+.btn.primary{background:#111;color:#fff}
+.btn.ghost{background:#fff;color:#111}
+.meta{color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:26px 0}
+.card{border:1px solid var(--line);border-radius:var(--radius);padding:18px;background:#fff}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p{margin:0;color:#333;font-size:15px}
+section{padding:26px 0}
+h2{font-size:28px;margin:30px 0 10px}
+h3{font-size:20px;margin:22px 0 8px}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:14px;overflow:auto;font-family:var(--mono);font-size:14.5px;position:relative}
+code{font-family:var(--mono);font-size:.92em;background:var(--code);padding:1px 6px;border-radius:5px}
+pre code{background:none;padding:0}
+.copybtn{position:absolute;top:8px;right:8px;border:1px solid var(--line);background:#fff;border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+th{background:var(--soft)}
+.badge{display:inline-block;font-size:12px;border:1px solid var(--line);border-radius:20px;padding:2px 10px;color:#333;background:var(--soft);margin:2px 4px 2px 0}
+.warn{border-left:4px solid #111;background:var(--soft);padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0}
+footer.site{border-top:1px solid var(--line);margin-top:40px;padding:28px 0 40px;color:#333;font-size:14px}
+footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px}
+.searchbox{width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;margin:10px 0 18px}
+.docnav{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.docnav a{border:1px solid var(--line);border-radius:8px;padding:10px 12px;text-decoration:none}
+.docnav a:hover{background:var(--soft)}
+.kbd{font-family:var(--mono);border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:0 6px;background:#fff}
+.flow{font-family:var(--mono);font-size:14px;background:#0f0f0f;color:#f2f2f2;border-radius:10px;padding:18px;overflow:auto}
+@media (max-width:640px){body{font-size:16px}.hero{padding:44px 0 26px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

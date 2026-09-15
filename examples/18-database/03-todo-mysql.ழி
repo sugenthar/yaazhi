@@ -1,0 +1,34 @@
+// Todo application with MySQL – integration example (separate from yaazhi_project)
+// This demonstrates how yaazhi_project could be extended to use தரவுத்தளம்
+சேர் தரவுத்தளம்
+சேர் சூழல்
+
+ஹோஸ்ட் = சூழல்.பெறு("YAAZHI_TEST_MYSQL_HOST")
+என்றால் ஹோஸ்ட் == "":
+    ஹோஸ்ட் = "127.0.0.1"
+தரவுத்தளம்_பெயர் = சூழல்.பெறு("YAAZHI_TEST_MYSQL_DATABASE")
+என்றால் தரவுத்தளம்_பெயர் == "":
+    தரவுத்தளம்_பெயர் = "yaazhi_test"
+பயனர் = சூழல்.பெறு("YAAZHI_TEST_MYSQL_USER")
+என்றால் பயனர் == "":
+    பயனர் = "root"
+கடவுச்சொல் = சூழல்.பெறு("YAAZHI_TEST_MYSQL_PASSWORD")
+
+db = தரவுத்தளம்.இணை("mysql", {
+    "host": ஹோஸ்ட்,
+    "port": $௩௩௦௬,
+    "database": தரவுத்தளம்_பெயர்,
+    "user": பயனர்,
+    "password": கடவுச்சொல்
+})
+
+db.செயல்படுத்து("CREATE TABLE IF NOT EXISTS todos (id INT AUTO_INCREMENT PRIMARY KEY, title VARCHAR(200), description TEXT, completed BOOLEAN, createdAt BIGINT)", [])
+அச்சிடு("MySQL Todo table ready")
+
+db.செயல்படுத்து("INSERT INTO todos (title, description, completed) VALUES (?, ?, ?)", ["Learn Yaazhi", "Build with DB", $பொய்])
+todos = db.வினா("SELECT * FROM todos", [])
+அச்சிடு("Todos from MySQL:")
+ஒவ்வொரு todo இல் todos:
+    அச்சிடு(todo["title"])
+
+db.மூடு()

@@ -1,0 +1,38 @@
+name: Release Yaazhi
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version (e.g. 0.1.0)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install toolchain
+        run: sudo apt-get update && sudo apt-get install -y cmake gcc
+      - name: Build distribution
+        run: |
+          # Source of truth lives in the compiler repo; this mirrors
+          # Download/build-dist.sh: Release compiler + runtime, smoke test,
+          # audit, tarball + sha256.
+          bash Download/build-dist.sh
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            Download/yaazhi-*.tar.gz
+            Download/yaazhi-*.sha256
+          body: |
+            Yaazhi ${{ github.ref_name }} — Tamil-first programming language.
+            Install: tar -xzf yaazhi-<ver>-linux-x86_64.tar.gz && ./install.sh --prefix ~/.local
+            Verify: sha256sum -c *.sha256

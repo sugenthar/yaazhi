@@ -1,0 +1,138 @@
+{
+  "Yaazhi function": {
+    "prefix": "செயல்",
+    "body": [
+      "செயல் ${1:பெயர்}(${2}):",
+      "    ${3}",
+      "    கொடு ${4}"
+    ],
+    "description": "Declare a Yaazhi function (செயல் … கொடு)"
+  },
+  "Yaazhi if": {
+    "prefix": "என்றால்",
+    "body": ["${1:நிபந்தனை} என்றால்:", "    ${2}"],
+    "description": "Yaazhi if statement (… என்றால்:)"
+  },
+  "Yaazhi if-else": {
+    "prefix": "என்றால்-இல்லை",
+    "body": [
+      "${1:நிபந்தனை} என்றால்:",
+      "    ${2}",
+      "இல்லை:",
+      "    ${3}"
+    ],
+    "description": "Yaazhi if/else statement"
+  },
+  "Yaazhi else-if": {
+    "prefix": "இல்லையென்றால்",
+    "body": ["${1:நிபந்தனை} இல்லையென்றால்:", "    ${2}"],
+    "description": "Yaazhi else-if branch"
+  },
+  "Yaazhi while loop": {
+    "prefix": "வரை",
+    "body": ["${1:நிபந்தனை} வரை:", "    ${2}"],
+    "description": "Yaazhi while loop (… வரை:)"
+  },
+  "Yaazhi for loop": {
+    "prefix": "ஒவ்வொரு",
+    "body": ["ஒவ்வொரு ${1:உருப்படி} இல் ${2:வரம்பு($௧, $௫)}:", "    ${3}"],
+    "description": "Yaazhi for loop (ஒவ்வொரு … இல் …:)"
+  },
+  "Yaazhi range": {
+    "prefix": "வரம்பு",
+    "body": ["வரம்பு(${1:$௧}, ${2:$௫})"],
+    "description": "Yaazhi range helper வரம்பு(start, end)"
+  },
+  "Yaazhi print": {
+    "prefix": "அச்சிடு",
+    "body": ["அச்சிடு(${1})"],
+    "description": "Print a value to standard output (அச்சிடு)"
+  },
+  "Yaazhi input": {
+    "prefix": "உள்ளீடு",
+    "body": ["${1:பெயர்} = உள்ளீடு(${2:\"\"})"],
+    "description": "Read a line from standard input (உள்ளீடு)"
+  },
+  "Yaazhi try": {
+    "prefix": "முயற்சி",
+    "body": [
+      "முயற்சி:",
+      "    ${1}",
+      "பிழை ${2:பி}:",
+      "    ${3}",
+      "இறுதியில்:",
+      "    ${4}"
+    ],
+    "description": "Yaazhi try/except/finally block"
+  },
+  "Yaazhi throw": {
+    "prefix": "எறி",
+    "body": ["எறி ${1:\"பிழை\"}"],
+    "description": "Raise an error (எறி)"
+  },
+  "Yaazhi class": {
+    "prefix": "வகுப்பு",
+    "body": [
+      "வகுப்பு ${1:பெயர்}:",
+      "    ${2:புலம்} : ${3:சொல்}",
+      "    செயல் உருவாக்கு(${4:பெயர்} : ${3:சொல்}):",
+      "        இது.${4:பெயர்} = ${4:பெயர்}"
+    ],
+    "description": "Declare a Yaazhi class with a constructor (வகுப்பு … செயல் உருவாக்கு)"
+  },
+  "Yaazhi interface": {
+    "prefix": "இடைமுகம்",
+    "body": ["இடைமுகம் ${1:பெயர்}:", "    செயல் ${2:முறை}() -> ${3:வெற்று}:", "        கொடு \\$வெற்று"],
+    "description": "Declare a Yaazhi interface (இடைமுகம்)"
+  },
+  "Yaazhi enum": {
+    "prefix": "எண்ணகம்",
+    "body": ["எண்ணகம் ${1:பெயர்}:", "    ${2:மதிப்பு1}", "    ${3:மதிப்பு2}"],
+    "description": "Declare a Yaazhi enum (எண்ணகம்)"
+  },
+  "Yaazhi method": {
+    "prefix": "செயல்-முறை",
+    "body": ["${1:பொது }செயல் ${2:பெயர்}(${3:அ : எண்}) -> ${4:எண்}:", "    ${5}"],
+    "description": "Declare a Yaazhi method with return type (செயல் … -> …)"
+  },
+  "Yaazhi web server": {
+    "prefix": "வலை-சேவையகம்",
+    "body": [
+      "சேர் வலை",
+      "",
+      "சேவையகம் = வலை.சேவையகம்(\"${1:127.0.0.1}\", \\$${2:௮௦௮௦})",
+      "",
+      "சேவையகம்.பெறு(\"/${3:}\", செயல்(${4:கோரிக்கை}):",
+      "    கொடு \"${5:வணக்கம் யாழி!}\"",
+      ")",
+      "",
+      "சேவையகம்.இயக்கு()"
+    ],
+    "description": "Yaazhi HTTP server (வலை.சேவையகம் + GET + இயக்கு) — Node-like"
+  },
+  "Yaazhi GET route": {
+    "prefix": "சேவையகம்-பெறு",
+    "body": ["சேவையகம்.பெறு(\"${1:/}\", செயல்(${2:கோரிக்கை}):", "    கொடு \"${3:வணக்கம் யாழி!}\"", ")"],
+    "description": "Register GET route (சேவையகம்.பெறு)"
+  },
+  "Yaazhi POST route": {
+    "prefix": "சேவையகம்-அனுப்பு",
+    "body": ["சேவையகம்.அனுப்பு(\"${1:/தரவு}\", செயல்(${2:கோரிக்கை}):", "    கொடு \"${3:தரவு பெறப்பட்டது}\"", ")"],
+    "description": "Register POST route (சேவையகம்.அனுப்பு)"
+  },
+  "Yaazhi PUT route": {
+    "prefix": "சேவையகம்-மாற்று",
+    "body": ["சேவையகம்.மாற்று(\"${1:/பயனர்}\", செயல்(${2:கோரிக்கை}):", "    கொடு \"${3:பயனர் மாற்றப்பட்டது}\"", ")"],
+    "description": "Register PUT route (சேவையகம்.மாற்று)"
+  },
+  "Yaazhi DELETE route": {
+    "prefix": "சேவையகம்-நீக்கு",
+    "body": ["சேவையகம்.நீக்கு(\"${1:/பயனர்}\", செயல்(${2:கோரிக்கை}):", "    கொடு \"${3:பயனர் நீக்கப்பட்டது}\"", ")"],
+    "description": "Register DELETE route (சேவையகம்.நீக்கு)"
+  },
+  "Yaazhi JSON response": {
+    "prefix": "சேவையகம்-JSON",
+    "body": ["சேவையகம்.பெறு(\"${1:/தரவு}\", செயல்(${2:கோரிக்கை}):", "    கொடு \"{\\\"message\\\": \\\"${3:வணக்கம்}\\\"}\"", ")"],
+    "description": "GET route returning JSON string"
+  }
+}

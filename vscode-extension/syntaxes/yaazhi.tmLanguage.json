@@ -1,0 +1,503 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Yaazhi",
+  "scopeName": "source.yaazhi",
+  "fileTypes": ["ழி"],
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#char-literal" },
+    { "include": "#numbers" },
+    { "include": "#booleans" },
+    { "include": "#imports" },
+    { "include": "#class-declaration" },
+    { "include": "#interface-declaration" },
+    { "include": "#enum-declaration" },
+    { "include": "#type-alias" },
+    { "include": "#function-declaration" },
+    { "include": "#member-access" },
+    { "include": "#builtins" },
+    { "include": "#function-call" },
+    { "include": "#type-annotation" },
+    { "include": "#keywords" },
+    { "include": "#operators" },
+    { "include": "#punctuation" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.yaazhi",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.yaazhi",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.yaazhi",
+          "begin": "\\$?\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.yaazhi",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "char-literal": {
+      "patterns": [
+        {
+          "name": "constant.character.yaazhi",
+          "match": "\\$'(?:[^'\\\\]|\\\\.)'"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.float.yaazhi",
+          "match": "\\$[௦-௯]+\\.[௦-௯]+"
+        },
+        {
+          "name": "constant.numeric.integer.yaazhi",
+          "match": "\\$[௦-௯]+"
+        }
+      ]
+    },
+    "booleans": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.yaazhi",
+          "match": "\\$(மெய்|பொய்)\\b"
+        },
+        {
+          "name": "constant.language.null.yaazhi",
+          "match": "\\$வெற்று\\b"
+        }
+      ]
+    },
+    "imports": {
+      "patterns": [
+        {
+          "name": "meta.import.yaazhi",
+          "begin": "^([ \\t]*)(சேர்)(?=[ \\t]+|\")",
+          "beginCaptures": {
+            "2": { "name": "keyword.control.import.yaazhi" }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "name": "keyword.control.import.yaazhi",
+              "match": "\\bஎன\\b"
+            },
+            {
+              "name": "string.quoted.double.yaazhi",
+              "begin": "\"",
+              "end": "\"",
+              "patterns": [
+                {
+                  "name": "constant.character.escape.yaazhi",
+                  "match": "\\\\."
+                }
+              ]
+            },
+            {
+              "name": "entity.name.namespace.yaazhi",
+              "match": "[\\p{L}_\\u0B80-\\u0BFF][\\p{L}\\p{N}_\\u0B80-\\u0BFF]*"
+            },
+            {
+              "name": "punctuation.separator.yaazhi",
+              "match": "[,\\.]"
+            }
+          ]
+        }
+      ]
+    },
+    "class-declaration": {
+      "patterns": [
+        {
+          "name": "meta.class.yaazhi",
+          "begin": "^([ \\t]*)(வகுப்பு)\\b\\s+([\\p{L}_\\u0B80-\\u0BFF][\\p{L}\\p{N}_\\u0B80-\\u0BFF]*)",
+          "beginCaptures": {
+            "2": { "name": "storage.type.class.yaazhi" },
+            "3": { "name": "entity.name.type.class.yaazhi" }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "name": "storage.modifier.yaazhi",
+              "match": "\\b(?:சேர்தல்|செயல்படுத்து)\\b"
+            },
+            {
+              "name": "entity.name.type.yaazhi",
+              "match": "[\\p{L}_\\u0B80-\\u0BFF][\\p{L}\\p{N}_\\u0B80-\\u0BFF]*"
+            },
+            {
+              "name": "punctuation.definition.typeparameters.begin.yaazhi",
+              "match": "<"
+            },
+            {
+              "name": "punctuation.definition.typeparameters.end.yaazhi",
+              "match": ">"
+            },
+            {
+              "name": "punctuation.separator.yaazhi",
+              "match": "[,:]"
+            }
+          ]
+        }
+      ]
+    },
+    "interface-declaration": {
+      "patterns": [
+        {
+          "name": "meta.interface.yaazhi",
+          "begin": "^([ \\t]*)(இடைமுகம்)\\b\\s+([\\p{L}_\\u0B80-\\u0BFF][\\p{L}\\p{N}_\\u0B80-\\u0BFF]*)",
+          "beginCaptures": {
+            "2": { "name": "storage.type.interface.yaazhi" },
+            "3": { "name": "entity.name.type.interface.yaazhi" }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "name": "punctuation.separator.yaazhi",
+              "match": ":"
+            }
+          ]
+        }
+      ]
+    },
+    "enum-declaration": {
+      "patterns": [
+        {
+          "name": "meta.enum.yaazhi",
+          "begin": "^([ \\t]*)(எண்ணகம்)\\b\\s+([\\p{L}_\\u0B80-\\u0BFF][\\p{L}\\p{N}_\\u0B80-\\u0BFF]*)",
+          "beginCaptures": {
+            "2": { "name": "storage.type.enum.yaazhi" },
+            "3": { "name": "entity.name.type.enum.yaazhi" }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "name": "punctuation.separator.yaazhi",
+              "match": ":"
+            }
+          ]
+        }
+      ]
+    },
+    "type-alias": {
+      "patterns": [
+        {
+          "name": "meta.type-alias.yaazhi",
+          "begin": "^([ \\t]*)(வகை)\\b\\s+([\\p{L}_\\u0B80-\\u0BFF][\\p{L}\\p{N}_\\u0B80-\\u0BFF]*)\\s*(=)",
+          "beginCaptures": {
+            "2": { "name": "storage.type.yaazhi" },
+            "3": { "name": "entity.name.type.yaazhi" },
+            "4": { "name": "keyword.operator.assignment.yaazhi" }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "name": "storage.type.yaazhi",
+              "match": "\\b(?:எண்|தசமம்|சொல்|எழுத்து|மெய்மை|பட்டியல்|தொகுப்பு|அகராதி|வெற்று|எதுவும்)\\b"
+            },
+            {
+              "name": "entity.name.type.yaazhi",
+              "match": "[\\p{L}_\\u0B80-\\u0BFF][\\p{L}\\p{N}_\\u0B80-\\u0BFF]*"
+            },
+            {
+              "name": "punctuation.definition.typeparameters.begin.yaazhi",
+              "match": "<"
+            },
+            {
+              "name": "punctuation.definition.typeparameters.end.yaazhi",
+              "match": ">"
+            },
+            {
+              "name": "keyword.operator.yaazhi",
+              "match": "\\?"
+            },
+            {
+              "name": "punctuation.separator.yaazhi",
+              "match": ","
+            }
+          ]
+        }
+      ]
+    },
+    "function-declaration": {
+      "patterns": [
+        {
+          "name": "meta.function.yaazhi",
+          "begin": "^([ \\t]*)(?:(பொது|தனி|பாதுகாப்பு)\\s+)?(செயல்)\\s+([\\p{L}_\\u0B80-\\u0BFF][\\p{L}\\p{N}_\\u0B80-\\u0BFF]*)",
+          "beginCaptures": {
+            "2": { "name": "storage.modifier.yaazhi" },
+            "3": { "name": "keyword.declaration.function.yaazhi" },
+            "4": { "name": "entity.name.function.yaazhi" }
+          },
+          "end": ":",
+          "endCaptures": {
+            "0": { "name": "punctuation.separator.yaazhi" }
+          },
+          "patterns": [
+            {
+              "name": "storage.type.yaazhi",
+              "match": "\\b(?:எண்|தசமம்|சொல்|எழுத்து|மெய்மை|பட்டியல்|தொகுப்பு|அகராதி|வெற்று|எதுவும்)\\b"
+            },
+            {
+              "name": "entity.name.type.yaazhi",
+              "match": "[\\p{L}_\\u0B80-\\u0BFF][\\p{L}\\p{N}_\\u0B80-\\u0BFF]*"
+            },
+            {
+              "name": "variable.parameter.yaazhi",
+              "match": "[\\p{L}_\\u0B80-\\u0BFF][\\p{L}\\p{N}_\\u0B80-\\u0BFF]*"
+            },
+            {
+              "name": "keyword.operator.arrow.yaazhi",
+              "match": "->"
+            },
+            {
+              "name": "keyword.operator.arrow.yaazhi",
+              "match": "=>"
+            },
+            {
+              "name": "keyword.operator.yaazhi",
+              "match": "\\?"
+            },
+            {
+              "name": "punctuation.definition.typeparameters.begin.yaazhi",
+              "match": "<"
+            },
+            {
+              "name": "punctuation.definition.typeparameters.end.yaazhi",
+              "match": ">"
+            },
+            { "include": "#punctuation" },
+            { "include": "#operators" }
+          ]
+        },
+        {
+          "name": "meta.function.yaazhi",
+          "begin": "^([ \\t]*)(?:(பொது|தனி|பாதுகாப்பு)\\s+)?(உருவாக்கு|உருவாக்குபவர்)\\s*(?=\\()",
+          "beginCaptures": {
+            "2": { "name": "storage.modifier.yaazhi" },
+            "3": { "name": "entity.name.function.yaazhi" }
+          },
+          "end": ":",
+          "endCaptures": {
+            "0": { "name": "punctuation.separator.yaazhi" }
+          },
+          "patterns": [
+            {
+              "name": "storage.type.yaazhi",
+              "match": "\\b(?:எண்|தசமம்|சொல்|எழுத்து|மெய்மை|பட்டியல்|தொகுப்பு|அகராதி|வெற்று|எதுவும்)\\b"
+            },
+            {
+              "name": "entity.name.type.yaazhi",
+              "match": "[\\p{L}_\\u0B80-\\u0BFF][\\p{L}\\p{N}_\\u0B80-\\u0BFF]*"
+            },
+            {
+              "name": "variable.parameter.yaazhi",
+              "match": "[\\p{L}_\\u0B80-\\u0BFF][\\p{L}\\p{N}_\\u0B80-\\u0BFF]*"
+            },
+            {
+              "name": "keyword.operator.arrow.yaazhi",
+              "match": "->"
+            },
+            {
+              "name": "keyword.operator.arrow.yaazhi",
+              "match": "=>"
+            },
+            {
+              "name": "keyword.operator.yaazhi",
+              "match": "\\?"
+            },
+            {
+              "name": "punctuation.definition.typeparameters.begin.yaazhi",
+              "match": "<"
+            },
+            {
+              "name": "punctuation.definition.typeparameters.end.yaazhi",
+              "match": ">"
+            },
+            { "include": "#punctuation" },
+            { "include": "#operators" }
+          ]
+        }
+      ]
+    },
+    "member-access": {
+      "patterns": [
+        {
+          "name": "meta.member-access.yaazhi",
+          "match": "(\\.)([\\p{L}_\\u0B80-\\u0BFF][\\p{L}\\p{N}_\\u0B80-\\u0BFF]*)(?=\\s*\\()",
+          "captures": {
+            "1": { "name": "punctuation.accessor.yaazhi" },
+            "2": { "name": "entity.name.function.yaazhi" }
+          }
+        },
+        {
+          "name": "meta.member-access.yaazhi",
+          "match": "(\\.)([\\p{L}_\\u0B80-\\u0BFF][\\p{L}\\p{N}_\\u0B80-\\u0BFF]*)",
+          "captures": {
+            "1": { "name": "punctuation.accessor.yaazhi" },
+            "2": { "name": "variable.other.property.yaazhi" }
+          }
+        }
+      ]
+    },
+    "builtins": {
+      "patterns": [
+        {
+          "name": "support.function.builtin.yaazhi",
+          "match": "\\b(?:அச்சிடு|உள்ளீடு)\\b"
+        },
+        {
+          "name": "support.function.builtin.yaazhi",
+          "match": "\\b(?:வரம்பு|பிழையிடு)\\b(?=\\s*\\()"
+        }
+      ]
+    },
+    "function-call": {
+      "patterns": [
+        {
+          "name": "entity.name.function.yaazhi",
+          "match": "([\\p{L}_\\u0B80-\\u0BFF][\\p{L}\\p{N}_\\u0B80-\\u0BFF]*)(?=\\s*\\()"
+        }
+      ]
+    },
+    "type-annotation": {
+      "patterns": [
+        {
+          "name": "meta.type-annotation.yaazhi",
+          "match": "(:)\\s*(எண்|தசமம்|சொல்|எழுத்து|மெய்மை|பட்டியல்|தொகுப்பு|அகராதி|வெற்று|எதுவும்)\\b(?:\\s*<[^>]+>)?(?:\\s*\\?)?",
+          "captures": {
+            "1": { "name": "punctuation.separator.colon.yaazhi" },
+            "2": { "name": "storage.type.yaazhi" }
+          }
+        },
+        {
+          "name": "meta.type-annotation.yaazhi",
+          "match": "(:)\\s*([\\p{L}_\\u0B80-\\u0BFF][\\p{L}\\p{N}_\\u0B80-\\u0BFF]*)\\s*(<[^>]+>)?\\s*(\\?)?",
+          "captures": {
+            "1": { "name": "punctuation.separator.colon.yaazhi" },
+            "2": { "name": "entity.name.type.yaazhi" },
+            "3": { "name": "punctuation.definition.typeparameters.yaazhi" },
+            "4": { "name": "keyword.operator.yaazhi" }
+          }
+        },
+        {
+          "name": "meta.return-type.yaazhi",
+          "match": "(->)\\s*(எண்|தசமம்|சொல்|எழுத்து|மெய்மை|பட்டியல்|தொகுப்பு|அகராதி|வெற்று|எதுவும்)\\b(?:\\s*<[^>]+>)?(?:\\s*\\?)?",
+          "captures": {
+            "1": { "name": "keyword.operator.arrow.yaazhi" },
+            "2": { "name": "storage.type.yaazhi" }
+          }
+        },
+        {
+          "name": "meta.return-type.yaazhi",
+          "match": "(->)\\s*([\\p{L}_\\u0B80-\\u0BFF][\\p{L}\\p{N}_\\u0B80-\\u0BFF]*)\\s*(<[^>]+>)?\\s*(\\?)?",
+          "captures": {
+            "1": { "name": "keyword.operator.arrow.yaazhi" },
+            "2": { "name": "entity.name.type.yaazhi" },
+            "3": { "name": "punctuation.definition.typeparameters.yaazhi" },
+            "4": { "name": "keyword.operator.yaazhi" }
+          }
+        },
+        {
+          "name": "keyword.operator.arrow.yaazhi",
+          "match": "=>"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.yaazhi",
+          "match": "\\b(?:செயல்|என்றால்|இல்லையென்றால்|இல்லை|வரை|ஒவ்வொரு|இல்|நிறுத்து|தொடர்|முயற்சி|பிழை|இறுதியில்|எறி|கொடு)\\b"
+        },
+        {
+          "name": "keyword.control.import.yaazhi",
+          "match": "\\b(?:என)\\b"
+        },
+        {
+          "name": "keyword.operator.logical.yaazhi",
+          "match": "\\b(?:மற்றும்|அல்லது)\\b"
+        },
+        {
+          "name": "variable.language.this.yaazhi",
+          "match": "\\bஇது\\b"
+        },
+        {
+          "name": "variable.language.super.yaazhi",
+          "match": "\\bமேல்\\b"
+        },
+        {
+          "name": "storage.modifier.yaazhi",
+          "match": "\\b(?:பொது|தனி|பாதுகாப்பு|நிலையான)\\b"
+        },
+        {
+          "name": "keyword.other.yaazhi",
+          "match": "\\b(?:இறக்கு|வெளியிடு|தொகுதி|பொருள்|மரபு|தன்னை)\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.arrow.yaazhi",
+          "match": "(?:->|=>)"
+        },
+        {
+          "name": "keyword.operator.comparison.yaazhi",
+          "match": "(?:==|!=|<=|>=)"
+        },
+        {
+          "name": "keyword.operator.arithmetic.yaazhi",
+          "match": "(?:\\*\\*)"
+        },
+        {
+          "name": "keyword.operator.assignment.yaazhi",
+          "match": "(?:\\+=|-=|\\*=|/=|=)"
+        },
+        {
+          "name": "keyword.operator.yaazhi",
+          "match": "(?:<|>|\\+|-|\\*|/|%|!|\\?)"
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.separator.yaazhi",
+          "match": "[,:]"
+        },
+        {
+          "name": "punctuation.bracket.round.yaazhi",
+          "match": "[()]"
+        },
+        {
+          "name": "punctuation.bracket.square.yaazhi",
+          "match": "[\\[\\]]"
+        },
+        {
+          "name": "punctuation.bracket.curly.yaazhi",
+          "match": "[{}]"
+        },
+        {
+          "name": "punctuation.accessor.yaazhi",
+          "match": "\\."
+        }
+      ]
+    }
+  }
+}

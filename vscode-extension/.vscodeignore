@@ -1,0 +1,20 @@
+# Source and tests
+src/
+test/
+yaazhi_logo/
+
+# Build and tooling config
+tsconfig.json
+vitest.config.ts
+eslint.config.js
+.eslintrc*
+.vscodeignore
+.gitignore
+
+# Build artifacts and source maps
+**/*.tsbuildinfo
+**/*.map
+
+# Temp / OS
+*.log
+.DS_Store

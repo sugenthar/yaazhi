@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yaazhi Package Manager — Share & Reuse Tamil Code</title>
+<meta name="description" content="Yaazhi Package Manager: create projects with yaazhi.toml, install libraries, search, update, pack and share Yaazhi code.">
+<meta name="keywords" content="Yaazhi package manager, yaazhi.toml, Yaazhi libraries, Yaazhi packages">
+<link rel="icon" href="../assets/favicon.png" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap nav">
+<a class="brand" href="../index.html">Yaazhi <span>யாழி</span></a><span class="ver">Yaazhi 0.1.0</span>
+<nav class="links" aria-label="Primary"><a href="../download.html">Download</a><a href="index.html">Docs</a><a href="../examples.html">Examples</a><a href="../libraries.html">Libraries</a><a href="../vscode.html">VS Code</a><a href="../releases.html">Releases</a><a href="../community.html">Community</a><a href="../about.html">About</a><a href="https://github.com/sugenthar/yaazhi">GitHub</a></nav></div></header>
+<main id="main" class="wrap">
+<h1>Yaazhi Package Manager</h1>
+<p>The Yaazhi Package Manager helps you create projects, add libraries, and share code. Projects use a <code>yaazhi.toml</code> file.</p>
+<pre><code>yaazhi new என்_திட்டம்
+cd என்_திட்டம்
+yaazhi run</code></pre>
+<h2>Everyday commands</h2>
+<table><tr><th>Command</th><th>Simple meaning</th></tr>
+<tr><td><code>yaazhi init</code></td><td>Start package setup in a folder.</td></tr>
+<tr><td><code>yaazhi install</code></td><td>Add libraries to your project.</td></tr>
+<tr><td><code>yaazhi remove</code></td><td>Remove a library.</td></tr>
+<tr><td><code>yaazhi update</code></td><td>Update libraries.</td></tr>
+<tr><td><code>yaazhi list</code></td><td>Show installed libraries.</td></tr>
+<tr><td><code>yaazhi search</code></td><td>Find libraries.</td></tr>
+<tr><td><code>yaazhi pack</code></td><td>Pack your project for sharing.</td></tr>
+<tr><td><code>yaazhi clean</code></td><td>Clean build files.</td></tr>
+<tr><td><code>yaazhi doctor</code></td><td>Check your setup.</td></tr></table>
+<h2>Project file — <code>yaazhi.toml</code></h2>
+<pre><code>["திட்டம்"]
+"பெயர்" = "என்_விளையாட்டு"
+"பதிப்பு" = "1.0.0"
+"நுழைவாயில்" = "src/முதன்மை.ழி"
+
+["சார்புகள்"]
+"விளையாட்டு_நூலகம்" = "1.0.0"</code></pre>
+<h2>Using a library</h2>
+<pre><code>சேர் கணிதம்
+அச்சிடு(கணிதம்.அடுக்கு($௨, $௩))</code></pre>
+</main>
+<footer class="site"><div class="wrap"><p><strong>Yaazhi — யாழி</strong> · Yaazhi 0.1.0 · MIT · © 2026 Yaazhi</p></div></footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

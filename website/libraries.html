@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yaazhi Libraries — Standard Library & 2D Games</title>
+<meta name="description" content="Yaazhi libraries: Yaazhi Standard Library modules (கணிதம், உரை, கோப்பு, வலை, தரவுத்தளம்…) and the official Yaazhi 2D Game Library for characters, movement, collision and scores.">
+<meta name="keywords" content="Yaazhi libraries, Yaazhi standard library, Yaazhi 2D game library, Tamil programming, யாழி">
+<link rel="icon" href="assets/favicon.png" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap nav">
+<a class="brand" href="index.html">Yaazhi <span>யாழி</span></a><span class="ver">Yaazhi 0.1.0</span>
+<nav class="links" aria-label="Primary"><a href="download.html">Download</a><a href="docs/getting-started.html">Docs</a><a href="examples.html">Examples</a><a href="libraries.html">Libraries</a><a href="vscode.html">VS Code</a><a href="releases.html">Releases</a><a href="community.html">Community</a><a href="about.html">About</a><a href="https://github.com/sugenthar/yaazhi">GitHub</a></nav></div></header>
+<main id="main" class="wrap">
+<h1>Yaazhi Libraries</h1>
+<p>Libraries give your Yaazhi programs ready-made powers — maths, text, files, web, database and games. Current version: <strong>Yaazhi 0.1.0</strong>.</p>
+<h2>Yaazhi Standard Library</h2>
+<p>The Yaazhi Standard Library ships with Yaazhi. Bring a module into your program with <code>சேர்</code>:</p>
+<pre><code>சேர் கணிதம்
+அச்சிடு(கணிதம்.அடுக்கு($௨, $௩))</code></pre>
+<table><tr><th>Module</th><th>What it helps with</th><th>Example</th></tr>
+<tr><td><code>கணிதம்</code></td><td>Maths</td><td><code>கணிதம்.அடுக்கு($௨, $௩)</code></td></tr>
+<tr><td><code>உரை</code></td><td>Tamil text</td><td><code>சேர் உரை</code></td></tr>
+<tr><td><code>மையம்</code></td><td>Everyday helpers</td><td><code>சேர் மையம்</code></td></tr>
+<tr><td><code>கோப்பு</code></td><td>Reading and writing files</td><td><code>கோப்பு.படி_மூலம்($"நாள்.txt")</code></td></tr>
+<tr><td><code>தொகுப்பு</code></td><td>Lists and collections</td><td><code>சேர் தொகுப்பு</code></td></tr>
+<tr><td><code>செய்தியகம்</code> / <code>தரவு</code></td><td>JSON data</td><td><code>தரவு.ஜெசன்(மாணவர்)</code></td></tr>
+<tr><td><code>நேரம்</code></td><td>Time and dates</td><td><code>சேர் நேரம்</code></td></tr>
+<tr><td><code>சூழல்</code></td><td>Environment values</td><td><code>சூழல்.பெறு($"PATH")</code></td></tr>
+<tr><td><code>சீரற்ற</code></td><td>Random numbers</td><td><code>சேர் சீரற்ற</code></td></tr>
+<tr><td><code>வலை</code></td><td>Web servers, requests, WebSocket</td><td><code>வலை.சேவையகம்($௧௮௦௮௦)</code></td></tr>
+<tr><td><code>தரவுத்தளம்</code></td><td>Saving and searching data</td><td><code>தரவுத்தளம்.இணை(...)</code></td></tr></table>
+<p><a href="docs/stdlib.html">Standard Library docs →</a></p>
+<h2>Yaazhi 2D Game Library</h2>
+<div class="card">
+<h3>Make 2D games in Tamil <span class="badge">v1.0.0</span></h3>
+<p>The official Yaazhi 2D Game Library helps you build:</p>
+<ul>
+<li>2D games and characters</li>
+<li>Movement and keyboard controls</li>
+<li>Collision between things</li>
+<li>Score systems</li>
+<li>Game screens and game loops</li>
+<li>Simple game projects like Coin Catch</li>
+</ul>
+<pre><code>சேர் விளையாட்டு
+விளையாட்டு.சாளரம்($"நாணயம் பிடி", $௪௦, $௧௮)
+செயல் ஆட்டச்_சட்டகம்():
+    விளையாட்டு.திரை_துடை()
+    விளையாட்டு.எல்லை($"#")
+    விளையாட்டு.காட்டு()
+விளையாட்டு.இயக்கு(ஆட்டச்_சட்டகம்)</code></pre>
+<p><a href="docs/game.html">2D game guide →</a> · <a href="examples.html#games">Game examples →</a></p>
+</div>
+<h2>Add libraries with the Yaazhi Package Manager</h2>
+<pre><code>yaazhi search விளையாட்டு
+yaazhi install
+yaazhi list</code></pre>
+<p><a href="docs/package-manager.html">How packages work →</a></p>
+</main>
+<footer class="site"><div class="wrap"><p><strong>Yaazhi — யாழி</strong> · Yaazhi 0.1.0 · MIT · © 2026 Yaazhi · <a href="https://github.com/sugenthar/yaazhi">GitHub</a></p></div></footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
